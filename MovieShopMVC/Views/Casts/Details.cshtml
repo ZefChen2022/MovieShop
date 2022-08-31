@@ -1,0 +1,31 @@
+﻿@model ApplicationCore.Models.CastDetailsModel
+
+@{
+    ViewData["Title"] = "Cast Details";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5">
+            <img src="@Model.ProfilePath" width="200" height="300"/><br /><br/><hr/>
+            <h5>@Model.Name</h5>
+        </div>
+        <div class="col-6">
+            @foreach (var movie in @Model.Movies)
+            {
+                <div class="row">
+                    <div class="col-4">
+                        <img src="@movie.PosterUrl" width="66" height="100" />
+                    </div>
+                    <div class="col">
+                        <p class="text-start">@movie.Title</p>
+                        <p class="text-end">@Model.Character </p>
+                    </div>
+                    <hr />
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+

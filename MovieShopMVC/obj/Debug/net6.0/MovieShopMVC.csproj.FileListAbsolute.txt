@@ -536,3 +536,5 @@
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopMVC/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopMVC/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

@@ -20,11 +20,19 @@ namespace MovieShopMVC.Controllers
             _accountService = accountService;
         }
 
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login");
+
+        }
+             
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginModel model)
         {
@@ -58,6 +66,7 @@ namespace MovieShopMVC.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
             return View();

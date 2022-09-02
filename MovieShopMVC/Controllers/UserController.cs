@@ -27,8 +27,8 @@ namespace MovieShopMVC.Controllers
         {
             // get all the movies puchased by user, user id
             // httpcontext.user.claims and then call the database and get the information to the views
-            var userId = _currentUser.UserId;
-            return View();
+            var movieCards = await _userService.GetAllPurchasesForUser(_currentUser.UserId);
+            return View(movieCards);
         }
 
         [HttpGet]

@@ -43,8 +43,8 @@ namespace ApplicationCore.Entities
         //navigation properties
         public ICollection<Review> ReviewsFromUser { get; set; }
         public ICollection<Purchase> PurchaseOfUser { get; set; }
-        public Favorite FavoriteMovie { get; set; }
-        public UserRole RoleOfUser { get; set; }
+        public ICollection<Favorite> FavoriteMovie { get; set; }
+        public ICollection<UserRole> RoleOfUser { get; set; }
     }
 }
 

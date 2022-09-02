@@ -8,6 +8,11 @@ namespace ApplicationCore.Contracts.Repositories
     {
         Task<User> GetUserByEmail(string email);
         Task<User> AddUser(User user);
+        Task<User> GetUserById(int userId);
+
+        Task<User> GetUserPurchases(int userId);
+        Task<User> GetUserFavorites(int userId);
+        Task<User> GetUserReviews(int userId);
     }
 }
 

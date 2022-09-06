@@ -45,6 +45,9 @@ builder.Services.AddScoped<IFavoriteRepository, FavoriteRepository>();
 
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

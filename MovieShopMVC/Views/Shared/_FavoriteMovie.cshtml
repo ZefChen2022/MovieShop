@@ -1,0 +1,41 @@
+﻿@model ApplicationCore.Models.FavoriteRequestModel
+@using ApplicationCore.Contracts.Services
+@using MovieShopMVC.Infra
+@inject ICurrentUser currentUser
+@inject IUserService userService
+
+@*if logged in*@
+@if (currentUser.IsAuthenticated)
+{
+    var favoriteExists = await userService.FavoriteExists(currentUser.UserId, Model.MovieId);
+    if (favoriteExists)
+    {
+        <form asp-controller="User" asp-action="RemoveFavorite">
+            <div>
+                <input asp-for="UserId" value="@currentUser.UserId" type="hidden" />
+                <input asp-for="MovieId" value="@Model.MovieId" type="hidden" />
+            </div>
+            <div class="text-end">
+                <button type="submit" class="w-100 btn btn-sm btn-outline-secondary bg-link text-decoration-none text-white mb-4 py-0">
+                <i class="bi bi-heart-fill" style="color:red; width:25px; height: 25px"></i>Favorite</button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <form asp-controller="User" asp-action="FavoriteMovie">
+            <div>
+                <input asp-for="UserId" value="@currentUser.UserId" type="hidden" />
+                <input asp-for="MovieId" value="@Model.MovieId" type="hidden" />
+            </div>
+            <div class="text-end">
+                <button type="submit" class="w-100 btn btn-sm btn-outline-secondary bg-link text-decoration-none text-white mb-4 py-0">
+                <i class="bi bi-heart" style="color:red; width:25px; height: 25px"></i> Favorite</button>
+            </div>
+        </form>
+    }
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Back to Login</a>
+}

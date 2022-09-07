@@ -1,82 +1,50 @@
 ﻿<Properties StartupConfiguration="{9DB74D23-061A-43E7-ADED-EE4C27425642}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Account/Login.cshtml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieShopMVC/Views/Movies/Details.cshtml">
     <Files>
-      <File FileName="Infrastructure/Migrations/20220825153433_UpdatingMovieTableWithFluentAPI.cs" Line="1" Column="1" />
-      <File FileName="MovieShopMVC/Controllers/HomeController.cs" Line="23" Column="32" />
-      <File FileName="ApplicationCore/Contracts/Repositories/IMovieRepository.cs" Line="13" Column="27" />
-      <File FileName="ApplicationCore/Contracts/Repositories/IUserRepository.cs" Line="10" Column="38" />
-      <File FileName="ApplicationCore/Contracts/Repositories/ICastRepository.cs" Line="13" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Repositories/IPurchaseRepository.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Repositories/IReportRepository.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Services/IUserService.cs" Line="8" Column="9" />
-      <File FileName="ApplicationCore/Contracts/Services/IAccountService.cs" Line="14" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Services/IGenreService.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Services/IAdminService.cs" Line="1" Column="1" />
-      <File FileName="ApplicationCore/Contracts/Services/ICastService.cs" Line="13" Column="31" />
-      <File FileName="Infrastructure/Repositories/MovieRepository.cs" Line="38" Column="54" />
-      <File FileName="Infrastructure/Repositories/UserRepository.cs" Line="21" Column="25" />
-      <File FileName="Infrastructure/Repositories/CastRepository.cs" Line="28" Column="1" />
-      <File FileName="Infrastructure/Repositories/PurchaseRepository.cs" Line="6" Column="57" />
-      <File FileName="Infrastructure/Repositories/ReportRepository.cs" Line="6" Column="52" />
-      <File FileName="Infrastructure/Services/MovieService.cs" Line="36" Column="45" />
-      <File FileName="Infrastructure/Services/UserService.cs" Line="6" Column="43" />
-      <File FileName="Infrastructure/Services/AccountService.cs" Line="56" Column="72" />
-      <File FileName="Infrastructure/Services/GenreService.cs" Line="3" Column="1" />
-      <File FileName="Infrastructure/Services/AdminService.cs" Line="2" Column="42" />
-      <File FileName="ApplicationCore/Contracts/Services/IMovieService.cs" Line="12" Column="8" />
-      <File FileName="ApplicationCore/Entities/Movie.cs" Line="42" Column="45" />
-      <File FileName="ApplicationCore/Models/MovieCardModel.cs" Line="13" Column="46" />
-      <File FileName="MovieShopMVC/Views/Shared/_MovieCard.cshtml" Line="1" Column="1" />
-      <File FileName="MovieShopMVC/Views/Home/Index.cshtml" Line="5" Column="2" />
-      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="49" Column="19" />
-      <File FileName="Infrastructure/Data/MovieShopDbContext.cs" Line="110" Column="43" />
-      <File FileName="MovieShopMVC/appsettings.json" Line="3" Column="134" />
-      <File FileName="MovieShopMVC/Program.cs" Line="49" Column="1" />
-      <File FileName="ApplicationCore/Entities/Genre.cs" Line="10" Column="41" />
-      <File FileName="ApplicationCore/Entities/Cast.cs" Line="20" Column="65" />
-      <File FileName="ApplicationCore/Entities/MovieCast.cs" Line="16" Column="39" />
-      <File FileName="ApplicationCore/Entities/User.cs" Line="31" Column="25" />
-      <File FileName="ApplicationCore/Entities/MovieGenre.cs" Line="11" Column="28" />
-      <File FileName="ApplicationCore/Entities/Purchase.cs" Line="17" Column="39" />
-      <File FileName="ApplicationCore/Entities/Trailer.cs" Line="15" Column="41" />
-      <File FileName="ApplicationCore/Entities/Favorite.cs" Line="6" Column="9" />
-      <File FileName="ApplicationCore/Entities/Role.cs" Line="16" Column="1" />
-      <File FileName="ApplicationCore/Entities/UserRole.cs" Line="11" Column="39" />
-      <File FileName="ApplicationCore/Entities/Review.cs" Line="20" Column="1" />
-      <File FileName="MovieShopMVC/Controllers/MoviesController.cs" Line="28" Column="74" />
-      <File FileName="ApplicationCore/Models/MovieDetailsModel.cs" Line="14" Column="36" />
-      <File FileName="ApplicationCore/Models/GenreModel.cs" Line="8" Column="36" />
-      <File FileName="ApplicationCore/Models/TrailerModel.cs" Line="9" Column="47" />
-      <File FileName="ApplicationCore/Models/CastModel.cs" Line="15" Column="66" />
-      <File FileName="MovieShopMVC/Controllers/AccountController.cs" Line="31" Column="14" />
-      <File FileName="ApplicationCore/Models/CastDetailsModel.cs" Line="18" Column="44" />
-      <File FileName="MovieShopMVC/Views/Casts/Details.cshtml" Line="13" Column="28" />
-      <File FileName="ApplicationCore/Models/MovieCastModel.cs" Line="19" Column="2" />
-      <File FileName="MovieShopMVC/Controllers/CastsController.cs" Line="4" Column="1" />
-      <File FileName="MovieShopMVC/Views/Account/Register.cshtml" Line="1" Column="1" />
-      <File FileName="MovieShopMVC/Views/Account/Login.cshtml" Line="15" Column="1" />
-      <File FileName="ApplicationCore/Models/LoginSuccessModel.cs" Line="8" Column="22" />
+      <File FileName="MovieShopMVC/Views/Movies/Details.cshtml" Line="25" Column="60" />
+      <File FileName="MovieShopMVC/Views/Movies/GenreMovies.cshtml" Line="17" Column="12" />
+      <File FileName="MovieShopMVC/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Account/Login.cshtml" Line="37" Column="7" />
+      <File FileName="MovieShopMVC/Views/Shared/_GenreMovieDropdown.cshtml" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_Layout.cshtml.css" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Program.cs" Line="74" Column="1" />
+      <File FileName="Infrastructure/Services/UserService.cs" Line="93" Column="15" />
+      <File FileName="MovieShopMVC/Views/Movies/Index.cshtml" Line="84" Column="42" />
+      <File FileName="MovieShopMVC/Views/Movies/_PurchaseMovie.cshtml" Line="31" Column="1" />
+      <File FileName="ApplicationCore/Models/ReviewRequestModel.cs" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Controllers/UserController.cs" Line="44" Column="27" />
+      <File FileName="Infrastructure/Services/AccountService.cs" Line="76" Column="45" />
+      <File FileName="ApplicationCore/Models/UserLoginSuccessModel.cs" Line="1" Column="1" />
+      <File FileName="ApplicationCore/Models/UserLoginModel.cs" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_LoginInfoPartial.cshtml" Line="21" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_ValidationScriptsPartial.cshtml" Line="4" Column="1" />
+      <File FileName="MovieShopMVC/Infra/CurrentUser.cs" Line="16" Column="57" />
+      <File FileName="MovieShopMVC/Infra/ICurrentUser.cs" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/User/EditReview.cshtml" Line="32" Column="23" />
+      <File FileName="MovieShopMVC/Views/User/EditProfile.cshtml" Line="39" Column="16" />
+      <File FileName="MovieShopMVC/Views/User/Purchases.cshtml" Line="20" Column="11" />
+      <File FileName="ApplicationCore/Models/UserEditModel.cs" Line="1" Column="1" />
+      <File FileName="Infrastructure/Repositories/UserRepository.cs" Line="1" Column="1" />
+      <File FileName="MovieShopMVC/Views/Shared/_PurchasedDetails.cshtml" Line="18" Column="19" />
+      <File FileName="MovieShopMVC/Views/Shared/_FavoriteMovie.cshtml" Line="20" Column="43" />
+      <File FileName="MovieShopMVC/Views/User/Favorites.cshtml" Line="12" Column="45" />
+      <File FileName="MovieShopMVC/Views/Shared/_FavoriteCard.cshtml" Line="7" Column="7" />
+      <File FileName="Infrastructure/Data/MovieShopDbContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MovieShopMVC" expanded="True">
-            <Node name="ApplicationCore" expanded="True">
-              <Node name="Contracts" expanded="True">
-                <Node name="Repositories" expanded="True" />
-                <Node name="Services" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="ApplicationCore" expanded="True" />
             <Node name="Infrastructure" expanded="True">
-              <Node name="Services" expanded="True" />
+              <Node name="Data" expanded="True" />
             </Node>
             <Node name="MovieShopMVC" expanded="True">
-              <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
+                <Node name="Movies" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="User" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -87,8 +55,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.MovieShopMVC PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>

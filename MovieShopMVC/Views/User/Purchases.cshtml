@@ -13,7 +13,7 @@
                     <a asp-controller="Movies" asp-action="Details" asp-route-id="@movieCard.Id">
                         <img src="@movieCard.PosterUrl" class="img-fluid rounded-top" alt="@movieCard.Title" />
                     </a>
-                    <partial name="_PurchaseDetailsPartial" model="@movieCard" />
+                    <partial name="_PurchasedDetails" model="@movieCard" />
                 </div>
             </div>
         }

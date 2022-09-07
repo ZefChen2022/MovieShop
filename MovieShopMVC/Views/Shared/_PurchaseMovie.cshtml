@@ -1,0 +1,54 @@
+﻿@model ApplicationCore.Models.PurchaseRequestModel
+@using ApplicationCore.Contracts.Services
+@using MovieShopMVC.Infra
+@inject ICurrentUser currentUser
+@inject IUserService userService
+@inject IMovieService movieService
+
+@{
+    var movie = await movieService.GetMovieDetails(Model.MovieId);
+}
+
+@if (currentUser.IsAuthenticated)
+{
+    var purchaseExists = await userService.IsMoviePurchased(Model.MovieId, currentUser.UserId);
+    if (purchaseExists)
+    {
+        <button type="button" class="btn btn-sm btn-light">Watch</button>
+    }
+    else
+    {
+        <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#purchaseModal">
+            BUY @movie.Price.Value.ToString("C")
+        </button>
+        <div class="modal fade" id="purchaseModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="purchaseModalLabel">Confirm Purchase</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        Pay <strong>$@movie.Price.Value.ToString("C")</strong> for <strong>@movie.Title</strong>?
+                    </div>
+
+                    <div class="modal-footer">
+                        <form asp-controller="User" asp-action="BuyMovie">
+                            <input asp-for="UserId" value="@currentUser.UserId" type="hidden" />
+                            <input asp-for="MovieId" value="@Model.MovieId" type="hidden" />
+                            <div class="text-end">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">BUY IT NOW!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login" class="btn btn-sm btn-light">Back to Login</a>
+}

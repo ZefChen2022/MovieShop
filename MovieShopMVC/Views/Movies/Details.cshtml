@@ -1,4 +1,5 @@
 ﻿@model ApplicationCore.Models.MovieDetailsModel
+@using ApplicationCore.Models
 
 @{
     ViewData["Title"] = "Movie Details";
@@ -15,21 +16,43 @@
             <p style="color:darkgray">@Model.RunTime | @Model.ReleaseDate </p><br />
             <p>
                 @foreach (var genre in @Model.Genres)
-                {
+                    {
                     <button type="button" class="btn btn-secondary btn-sm" style="font-weight:bold; min-inline-size">
                         @genre.Name
                     </button>
-                }
-        </p><br />
+                    }
+            </p><br />
+            <p><button type="button" class="btn btn-success">8.7</button></p>
         <a style="color: white; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;vertical-align:bottom">@Model.Overview</a>
     </div>
-    <div class="col-4" style="text-align:right; vertical-align:middle">
-        <button type="button" class="btn btn-secoazsswndary" data-bs-toggle="modal" data-bs-target="#Modal2">
-            Review
-        </button><br />
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal1">
-            Buy: $@Model.Price
-        </button>
+        <div class="col-2 py-5 pe-5">
+            <div class="vstack gap-3">
+                @{
+                    ReviewRequestModel reviewRequest = new ReviewRequestModel
+                    {
+                        MovieId = Model.Id
+                    };
+                    }
+                <partial name="_ReviewMovie" model="reviewRequest" />
+               
+                @{
+                    PurchaseRequestModel purchaseRequest = new PurchaseRequestModel
+                    {
+                        MovieId = Model.Id
+                    };
+                    }
+                <partial name="_PurchaseMovie" model="purchaseRequest" />
+                
+                @{
+                    FavoriteRequestModel favoriteRequest = new FavoriteRequestModel
+                    {
+                        MovieId = Model.Id
+                    };
+                    }
+                <partial name="_FavoriteMovie" model=favoriteRequest />
+
+            </div>
+        </div>
     </div>
     </div>
     <br />
@@ -57,81 +80,25 @@
             <br />
         </div>
         <div class="col">
-            <h3>CAST</h3>
+            <h3>Cast</h3>
             <hr />
-            @foreach (var cast in @Model.Casts)
-                    {
-                <div class="row">
-                        <a href="#" class="col-3" style="text-align:center">
-                        <a asp-controller="Casts" asp-action="Details" asp-route-id="@cast.Id">
-                            <img src="@cast.ProfilePath" width="50" height="75">
-                        </a>
-                        <p class="col-4" style="text-align:right">@cast.Name</p>
-                        <p class="col-1" style="text-align:center">as</p>
-                        <p class="col-4" style="text-align:right">@cast.Character</p>
-                </div>
-                <hr />
-            }
-        </div>
-    </div>
-</div>
-
-@*Modal Purchase*@
-<div class="modal" id="Modal1" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Purchase Window</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Confirm to purchase this movie.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*ModalReview*@
-<div class="modal fade" id="Modal2" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel2">Review</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                1(Worst) to 10(Best)
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">1</a></li>
-                        <li><a class="dropdown-item" href="#">2</a></li>
-                        <li><a class="dropdown-item" href="#">3</a></li>
-                        <li><a class="dropdown-item" href="#">4</a></li>
-                        <li><a class="dropdown-item" href="#">5</a></li>
-                        <li><a class="dropdown-item" href="#">6</a></li>
-                        <li><a class="dropdown-item" href="#">7</a></li>
-                        <li><a class="dropdown-item" href="#">8</a></li>
-                        <li><a class="dropdown-item" href="#">9</a></li>
-                        <li><a class="dropdown-item" href="#">10</a></li>
-                    </ul>
-                </div>
-                Comment:
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Review Area</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
-                <button type="button" class="btn btn-light">Submit</button>
-            </div>
+            <ul class="list-group list-group-flush">
+                @foreach (var cast in Model.Casts)
+                {
+                    <li class="list-group-item">
+                        <div class="hstack">
+                            <a asp-controller="Casts" asp-action="Details" asp-route-id="@cast.Id">
+                                <img class="img-fluid rounded-circle" style="width:2vw" src="@cast.ProfilePath" alt="@cast.Name">
+                            </a>
+                            <a asp-controller="Casts" asp-action="Details" asp-route-id="@cast.Id" class="align-self-start text-decoration-none text-dark" style="width:15vw; margin-left: 4vw;">
+                                <span>@cast.Name</span>
+                            </a>
+                            as
+                            <span class="align-self-start" style="width:15vw; margin-left: 4vw;">@cast.Character</span>
+                            </div>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </div>

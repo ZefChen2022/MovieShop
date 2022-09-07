@@ -84,7 +84,6 @@ namespace Infrastructure.Services
             return purchaseDetails;
         }
         //Favorite
-        //Task<bool> AddFavorite(FavoriteRequestModel favoriteRequest);
         public async Task<bool> AddFavorite(FavoriteRequestModel favoriteRequest)
         {
             Favorite aFavorite = new Favorite
@@ -95,14 +94,14 @@ namespace Infrastructure.Services
             await _favoriteRepository.AddFavorite(aFavorite);
             return true;
         }
-        //Task<bool> RemoveFavorite(FavoriteRequestModel favoriteRequest);
+
         public async Task<bool> RemoveFavorite(FavoriteRequestModel favoriteRequest)
         {
             var favorite = await _favoriteRepository.GetById(favoriteRequest.MovieId, favoriteRequest.UserId);
             await _favoriteRepository.RemoveFavorite(favorite);
             return true;
         }
-        //Task<bool> FavoriteExists(int id, int movieId);
+
         public async Task<bool> FavoriteExists(int userId, int movieId)
         {
             var favorite = await _favoriteRepository.GetById(movieId, userId);
@@ -112,7 +111,7 @@ namespace Infrastructure.Services
             }
             return false;
         }
-        //Task<List<MovieCardModel>> GetAllFavoritesForUser(int id);
+
         public async Task<List<MovieCardModel>> GetAllFavoritesForUser(int userId)
         {
             var movieCards = new List<MovieCardModel>();
@@ -129,7 +128,6 @@ namespace Infrastructure.Services
         }
 
         //Review
-        //Task<bool> AddMovieReview(ReviewRequestModel reviewRequest);
         public async Task<bool> AddMovieReview(ReviewRequestModel reviewRequest)
         {
             Review aReview = new Review
@@ -143,7 +141,7 @@ namespace Infrastructure.Services
             await _reviewRepository.AddReview(aReview);
             return true;
         }
-        //Task<List<ReviewDetailsModel>> GetAllReviewsByUser(int userId);
+
         public async Task<List<ReviewDetailsModel>> GetAllReviewsByUser(int userId)
         {
             var reviews = await _userRepository.GetUserReviews(userId);
@@ -159,7 +157,7 @@ namespace Infrastructure.Services
             }));
             return reviewCards;
         }
-        //Task<bool> ReviewExists(int userId, int movieId);
+
         public async Task<bool> ReviewExists(int userId, int movieId)
         {
             var review = await _reviewRepository.GetById(movieId, userId);

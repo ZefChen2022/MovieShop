@@ -1,10 +1,13 @@
-﻿using ApplicationCore.Contracts.Repositories;
+﻿using System.Text;
+using ApplicationCore.Contracts.Repositories;
 using ApplicationCore.Contracts.Services;
 using ApplicationCore.Entities;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +39,21 @@ builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddDbContext<MovieShopDbContext>(options => options.UseSqlServer
     (builder.Configuration.GetConnectionString("MovieShopDbConnection")));
 
+// API is gonna use JWT authentication, so that it can look at the incoming request
+// and look for Token and if valid it will get the claims in to HttpContext
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = false,
+            ValidateIssuer = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes
+            (builder.Configuration["secretKey"]))
+        };
+    });
 
 var app = builder.Build();
 
@@ -49,6 +66,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//Middelware
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

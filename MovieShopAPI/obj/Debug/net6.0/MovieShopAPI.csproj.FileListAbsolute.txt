@@ -265,3 +265,4 @@
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopAPI/bin/Debug/net6.0/ApplicationCore.pdb
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopAPI/bin/Debug/net6.0/Infrastructure.pdb
 /Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/chenzefeng/Desktop/Stuff/Antra/Core/MovieShop/MovieShopAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

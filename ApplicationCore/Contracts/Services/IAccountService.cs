@@ -8,6 +8,9 @@ namespace ApplicationCore.Contracts.Services
     {
         Task<UserLoginSuccessModel> ValidateUser(UserLoginModel model);
         Task<int> RegisterUser(UserRegisterModel model);
+
+        // API added
+        Task<bool> EmailExists(string email);
     }
 }
 

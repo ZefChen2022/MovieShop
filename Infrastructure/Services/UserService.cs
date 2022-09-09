@@ -203,6 +203,24 @@ namespace Infrastructure.Services
             };
             return reviewDetails;
         }
+
+        // API User Details
+        public async Task<UserDetailsModel> GetUserDetails(int id)
+        {
+            var user = await _userRepository.GetUserById(id);
+            var userDetails = new UserDetailsModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                DateOfBirth = user.DateOfBirth,
+                PhoneNumber = user.PhoneNumber,
+                ProfilePictureUrl = user.ProfilePictureUrl
+            };
+            
+            return userDetails;
+        }
     }
 
 }

@@ -25,6 +25,9 @@ namespace ApplicationCore.Contracts.Services
         Task<bool> UpdateMovieReview(ReviewRequestModel reviewRequest);
         Task<bool> DeleteMovieReview(int userId, int movieId);
         Task<ReviewDetailsModel> GetReviewDetails(int userId, int movieId);
+
+        // (API) Get User
+        Task<UserDetailsModel> GetUserDetails(int id);
     }
 }
 

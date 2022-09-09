@@ -100,6 +100,16 @@ namespace Infrastructure.Services
                 256 / 8));
             return hashed;
         }
+
+        public async Task<bool> EmailExists(string email)
+        {
+            var dbUser = await _userRepository.GetUserByEmail(email);
+            if (dbUser == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
 

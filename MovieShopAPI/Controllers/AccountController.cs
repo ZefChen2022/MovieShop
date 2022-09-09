@@ -59,7 +59,7 @@ namespace MovieShopAPI.Controllers
             // Once the API received the token from client it will validate the JWT token and if valid it will send the
             // data back to the client
             // If JWT token is invalid or token is expired then API will send 401 Unauthorized
-            throw new UnauthorizedAccessException("Please check email and Email");
+            throw new UnauthorizedAccessException("Please check email and password");
             //return Unauthorized(new { errorMessage = "Please check email and password." });
         }
 
@@ -99,6 +99,14 @@ namespace MovieShopAPI.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var encodedJwt = tokenHandler.CreateToken(tokenDetails);
             return tokenHandler.WriteToken(encodedJwt);
+        }
+
+        [HttpGet]
+        [Route("check-email")]
+        public async Task<IActionResult> EmailExists([FromQuery] string email)
+        {
+            var emailExists = await _accountService.EmailExists(email);
+            return Ok(new { emailExists = emailExists });
         }
     }
 }
